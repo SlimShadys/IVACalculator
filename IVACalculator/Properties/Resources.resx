@@ -121,4 +121,28 @@
   <data name="IVACalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IVACalculator.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="insertPrice" xml:space="preserve">
+        <value>Inserisci un prezzo!</value>
+    </data>
+  <data name="insertValue" xml:space="preserve">
+        <value>Inserire una valuta!</value>
+    </data>
+  <data name="msgCaption" xml:space="preserve">
+        <value>ATTENZIONE</value>
+    </data>
+  <data name="easter" xml:space="preserve">
+        <value>dolito :p</value>
+    </data>
+  <data name="euroValue" xml:space="preserve">
+        <value>€</value>
+    </data>
+  <data name="EURToUSD" xml:space="preserve">
+        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_USD&amp;compact=y</value>
+    </data>
+  <data name="EURToCAD" xml:space="preserve">
+        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_CAD&amp;compact=y</value>
+    </data>
+  <data name="EURToGBP" xml:space="preserve">
+    <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_GBP&amp;compact=y</value>
+  </data>
 </root>

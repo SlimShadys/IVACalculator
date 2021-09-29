@@ -36,6 +36,7 @@ namespace IVACalculator
             this.speseFinaliText = new System.Windows.Forms.Label();
             this.calcolaButton = new System.Windows.Forms.Button();
             this.versionText = new System.Windows.Forms.Label();
+            this.currencyComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // prezzoTextBox
@@ -44,7 +45,7 @@ namespace IVACalculator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prezzoTextBox.Location = new System.Drawing.Point(98, 44);
             this.prezzoTextBox.Name = "prezzoTextBox";
-            this.prezzoTextBox.Size = new System.Drawing.Size(101, 20);
+            this.prezzoTextBox.Size = new System.Drawing.Size(57, 20);
             this.prezzoTextBox.TabIndex = 0;
             this.prezzoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prezzoTextBoxKeyPress);
             // 
@@ -53,11 +54,11 @@ namespace IVACalculator
             this.articoloText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.articoloText.AutoSize = true;
-            this.articoloText.Location = new System.Drawing.Point(95, 28);
+            this.articoloText.Location = new System.Drawing.Point(110, 18);
             this.articoloText.Name = "articoloText";
-            this.articoloText.Size = new System.Drawing.Size(109, 13);
+            this.articoloText.Size = new System.Drawing.Size(77, 13);
             this.articoloText.TabIndex = 1;
-            this.articoloText.Text = "Prezzo Articolo (USD)";
+            this.articoloText.Text = "Prezzo Articolo";
             this.articoloText.Click += new System.EventHandler(this.articoloText_Click);
             // 
             // speseText
@@ -104,13 +105,23 @@ namespace IVACalculator
             this.versionText.Name = "versionText";
             this.versionText.Size = new System.Drawing.Size(28, 13);
             this.versionText.TabIndex = 5;
-            this.versionText.Text = "v0.1";
+            this.versionText.Text = "v0.2";
+            // 
+            // currencyComboBox
+            // 
+            this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyComboBox.FormattingEnabled = true;
+            this.currencyComboBox.Location = new System.Drawing.Point(161, 43);
+            this.currencyComboBox.Name = "currencyComboBox";
+            this.currencyComboBox.Size = new System.Drawing.Size(47, 21);
+            this.currencyComboBox.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 218);
+            this.Controls.Add(this.currencyComboBox);
             this.Controls.Add(this.versionText);
             this.Controls.Add(this.calcolaButton);
             this.Controls.Add(this.speseFinaliText);
@@ -134,6 +145,7 @@ namespace IVACalculator
         private System.Windows.Forms.Label speseFinaliText;
         private System.Windows.Forms.Button calcolaButton;
         private System.Windows.Forms.Label versionText;
+        private System.Windows.Forms.ComboBox currencyComboBox;
     }
 }
 

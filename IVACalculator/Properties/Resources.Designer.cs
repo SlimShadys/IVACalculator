@@ -79,7 +79,7 @@ namespace IVACalculator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_CAD&amp;compact=y.
+        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_CAD&amp;compact=y.
         /// </summary>
         internal static string EURToCAD {
             get {
@@ -88,7 +88,7 @@ namespace IVACalculator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_GBP&amp;compact=y.
+        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_GBP&amp;compact=y.
         /// </summary>
         internal static string EURToGBP {
             get {
@@ -97,7 +97,7 @@ namespace IVACalculator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_USD&amp;compact=y.
+        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_USD&amp;compact=y.
         /// </summary>
         internal static string EURToUSD {
             get {
@@ -139,6 +139,15 @@ namespace IVACalculator.Properties {
         internal static string msgCaption {
             get {
                 return ResourceManager.GetString("msgCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impossibile recuperare i dati. Server fuori servizio..
+        /// </summary>
+        internal static string ServerDownError {
+            get {
+                return ResourceManager.GetString("ServerDownError", resourceCulture);
             }
         }
     }

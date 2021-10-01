@@ -11,6 +11,9 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+	<data name="IVACalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\IVACalculator.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
     <data name="easter" xml:space="preserve">
         <value>dolito :p</value>
     </data>
@@ -18,10 +21,10 @@
         <value>€</value>
     </data>
     <data name="EURToCAD" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_CAD&amp;compact=y</value>
+        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_CAD&amp;compact=y</value>
     </data>
     <data name="EURToUSD" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_USD&amp;compact=y</value>
+        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_USD&amp;compact=y</value>
     </data>
     <data name="insertPrice" xml:space="preserve">
         <value>Insert a price!</value>
@@ -33,6 +36,9 @@
         <value>WARNING</value>
     </data>
     <data name="EURToGBP" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=57313b824a42f841f02c&amp;q=EUR_GBP&amp;compact=y</value>
+        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_GBP&amp;compact=y</value>
+    </data>
+    <data name="ServerDownError" xml:space="preserve">
+        <value>Failed to fetch data. Server is down.</value>
     </data>
 </root>

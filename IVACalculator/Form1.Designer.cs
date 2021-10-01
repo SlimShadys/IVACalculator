@@ -50,9 +50,10 @@ namespace IVACalculator
             this.prezzoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.prezzoTextBox.Location = new System.Drawing.Point(89, 18);
             this.prezzoTextBox.Name = "prezzoTextBox";
-            this.prezzoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.prezzoTextBox.Size = new System.Drawing.Size(165, 20);
             this.prezzoTextBox.TabIndex = 0;
             this.prezzoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prezzoTextBoxKeyPress);
+            this.prezzoTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.previewKeyDownPrezzoTextBox);
             // 
             // articoloText
             // 
@@ -70,7 +71,7 @@ namespace IVACalculator
             this.speseText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.speseText.AutoSize = true;
             this.speseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speseText.Location = new System.Drawing.Point(3, 8);
+            this.speseText.Location = new System.Drawing.Point(0, 8);
             this.speseText.Name = "speseText";
             this.speseText.Size = new System.Drawing.Size(83, 13);
             this.speseText.TabIndex = 2;
@@ -93,9 +94,9 @@ namespace IVACalculator
             // 
             this.calcolaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.calcolaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calcolaButton.Location = new System.Drawing.Point(257, 140);
+            this.calcolaButton.Location = new System.Drawing.Point(291, 140);
             this.calcolaButton.Name = "calcolaButton";
-            this.calcolaButton.Size = new System.Drawing.Size(111, 23);
+            this.calcolaButton.Size = new System.Drawing.Size(98, 23);
             this.calcolaButton.TabIndex = 4;
             this.calcolaButton.Text = "Calcola";
             this.calcolaButton.UseVisualStyleBackColor = true;
@@ -109,16 +110,18 @@ namespace IVACalculator
             this.versionText.Name = "versionText";
             this.versionText.Size = new System.Drawing.Size(88, 13);
             this.versionText.TabIndex = 5;
-            this.versionText.Text = "SlimShadys, v0.3";
+            this.versionText.Text = "SlimShadys, v1.0";
+            this.versionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // currencyComboBox
             // 
             this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Location = new System.Drawing.Point(89, 41);
+            this.currencyComboBox.Location = new System.Drawing.Point(89, 44);
             this.currencyComboBox.Name = "currencyComboBox";
             this.currencyComboBox.Size = new System.Drawing.Size(47, 21);
             this.currencyComboBox.TabIndex = 6;
+            this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.selectedIndexChangedCurrencyCB);
             // 
             // panel1
             // 
@@ -130,12 +133,12 @@ namespace IVACalculator
             this.panel1.Controls.Add(this.currencyComboBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(356, 82);
+            this.panel1.Size = new System.Drawing.Size(378, 82);
             this.panel1.TabIndex = 7;
             // 
             // valutaLabel
             // 
-            this.valutaLabel.Location = new System.Drawing.Point(3, 44);
+            this.valutaLabel.Location = new System.Drawing.Point(3, 47);
             this.valutaLabel.Name = "valutaLabel";
             this.valutaLabel.Size = new System.Drawing.Size(76, 18);
             this.valutaLabel.TabIndex = 7;
@@ -159,7 +162,7 @@ namespace IVACalculator
             this.panel2.Controls.Add(this.speseFinaliText);
             this.panel2.Location = new System.Drawing.Point(12, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(356, 30);
+            this.panel2.Size = new System.Drawing.Size(378, 30);
             this.panel2.TabIndex = 8;
             // 
             // Form1
@@ -167,7 +170,7 @@ namespace IVACalculator
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(380, 172);
+            this.ClientSize = new System.Drawing.Size(401, 171);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -175,6 +178,7 @@ namespace IVACalculator
             this.Controls.Add(this.versionText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "IVACalculator";
             this.panel1.ResumeLayout(false);

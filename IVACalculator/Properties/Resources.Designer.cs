@@ -79,33 +79,6 @@ namespace IVACalculator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_CAD&amp;compact=y.
-        /// </summary>
-        internal static string EURToCAD {
-            get {
-                return ResourceManager.GetString("EURToCAD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_GBP&amp;compact=y.
-        /// </summary>
-        internal static string EURToGBP {
-            get {
-                return ResourceManager.GetString("EURToGBP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_USD&amp;compact=y.
-        /// </summary>
-        internal static string EURToUSD {
-            get {
-                return ResourceManager.GetString("EURToUSD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Inserisci un prezzo!.
         /// </summary>
         internal static string insertPrice {

@@ -110,7 +110,7 @@ namespace IVACalculator
             this.versionText.Name = "versionText";
             this.versionText.Size = new System.Drawing.Size(88, 13);
             this.versionText.TabIndex = 5;
-            this.versionText.Text = "SlimShadys, v1.0";
+            this.versionText.Text = "SlimShadys, v1.1";
             this.versionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // currencyComboBox

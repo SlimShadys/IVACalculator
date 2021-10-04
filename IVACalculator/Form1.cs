@@ -1,29 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
-using HtmlAgilityPack;
+using Newtonsoft.Json;
 
 namespace IVACalculator
 {
     public partial class Form1 : Form
     {
         private CultureInfo currentCulture = CultureInfo.CurrentCulture;
-        private List<string> statusRow = new List<string>();
         private double currency;
         private double prezzoArticolo;
         private double prezzoFinale;
-        private readonly HtmlWeb web = new HtmlWeb();
         private readonly WebClient wc = new WebClient();
-        private static byte[] raw;
+        private static string AUD = "";
+        private static string CAD = "";
+        private static string GBP = "";
+        private static string USD = "";
+        private static string EUR = "1.00";
+        private static string tokenKey = "OWI0ODJlZTVjNGZiNGE1MWY5N2QzOTVkMjk5MzkzZjE=";
         private string caption = Properties.Resources.ResourceManager.GetString("msgCaption", CultureInfo.CurrentCulture);
         private string title = Properties.Resources.ResourceManager.GetString("insertValue", CultureInfo.CurrentCulture);
         private static String[] currencyList =
         {
+            "AUD",
             "CAD",
             "EUR",
             "GBP",
@@ -36,6 +40,7 @@ namespace IVACalculator
         public Form1()
         {
             InitializeComponent();
+            getCurrency();
             for (int i = 0; i < currencyList.Length; i++)
             {
                 currencyComboBox.Items.Add(currencyList[i]);
@@ -91,6 +96,7 @@ namespace IVACalculator
          */
         private double convert(String prezzo)
         {
+            
             currency = Double.Parse(getCurrency(currencyComboBox.Text));
 
             if (currency == 0.00)
@@ -103,60 +109,54 @@ namespace IVACalculator
         }
 
         /*
+         * Fetch delle ultime valute tramite l'API di Fixer.io
+         */
+        private void getCurrency()
+        {
+            var success = false;
+            var data = Convert.FromBase64String(tokenKey);
+            dynamic jsonDe = JsonConvert.DeserializeObject(wc.DownloadString(
+                "http://data.fixer.io/api/latest?access_key="+ Encoding.UTF8.GetString(data) + "&symbols=USD,AUD,CAD,GBP&format=1"));
+            try
+            {
+                success = jsonDe.success;
+            }
+            catch (NullReferenceException) {
+            }
+            
+            if (!success)
+            {
+                speseFinaliText.Text = Properties.Resources.ResourceManager.GetString("ServerDownError", currentCulture);
+                return;
+            }
+            USD = jsonDe.rates.USD;
+            AUD = jsonDe.rates.AUD;
+            CAD = jsonDe.rates.CAD;
+            GBP = jsonDe.rates.GBP;
+        }
+        
+        /*
          * Metodo per il recupero del tasso di conversione
          * In base alla valuta scelta, facciamo gli opportuni check
          */
         private string getCurrency(String webCurrency)
         {
-            // Skip recupero dei dati in base allo stato del Server
-            // Inoltre skippiamo quando è selezionato "EUR", poichè
-            // riusciamo a fare quel calcolo anche senza connessione.
-            if (serverIsDown() && webCurrency != "EUR")
-            {
-                speseFinaliText.Text = Properties.Resources.ResourceManager.GetString("ServerDownError", currentCulture);
-                return "";
-            }
-            
-            // Recupera il tasso di conversione
             switch (webCurrency)
             {
+                case "AUD":
+                    return AUD.Replace(".", ",");
                 case "CAD":
-                    raw = wc.DownloadData(Properties.Resources.ResourceManager.GetString("EURToCAD", currentCulture) ?? string.Empty);
-                    break;
+                    return CAD.Replace(".", ",");
                 case "EUR":
-                    return "1,00";
+                    return EUR.Replace(".", ",");
                 case "GBP":
-                    raw = wc.DownloadData(Properties.Resources.ResourceManager.GetString("EURToGBP", currentCulture) ?? string.Empty);
-                    break;
+                    return GBP.Replace(".", ",");
                 case "USD":
-                    raw = wc.DownloadData(Properties.Resources.ResourceManager.GetString("EURToUSD", currentCulture) ?? string.Empty);
-                    break;
+                    return USD.Replace(".", ",");
                 default:
                     System.Windows.MessageBox.Show(title, caption, MessageBoxButton.OK);
                     return "0,00";
             }
-            return System.Text.Encoding.UTF8.GetString(raw).Substring(18, 7).Replace(".", ",");
-        }
-
-        /*
-         * Controlla lo stato del Server
-         */
-        private bool serverIsDown()
-        {
-
-            var doc = web.Load("https://www.currencyconverterapi.com/server-status");
-            foreach (HtmlNode table in doc.DocumentNode.SelectNodes("//table"))
-            {   
-                foreach (HtmlNode row in table.SelectNodes("tbody"))
-                {
-                    foreach (HtmlNode cell in row.SelectNodes("tr"))
-                    {
-                        statusRow.Add(cell.InnerText.Trim());
-                    }
-                }
-            }
-
-            return statusRow[1].Contains("DOWN");
         }
 
         /*

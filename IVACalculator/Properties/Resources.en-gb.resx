@@ -20,12 +20,6 @@
     <data name="euroValue" xml:space="preserve">
         <value>€</value>
     </data>
-    <data name="EURToCAD" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_CAD&amp;compact=y</value>
-    </data>
-    <data name="EURToUSD" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_USD&amp;compact=y</value>
-    </data>
     <data name="insertPrice" xml:space="preserve">
         <value>Insert a price!</value>
     </data>
@@ -34,9 +28,6 @@
     </data>
     <data name="msgCaption" xml:space="preserve">
         <value>WARNING</value>
-    </data>
-    <data name="EURToGBP" xml:space="preserve">
-        <value>https://free.currencyconverterapi.com/api/v6/convert?apiKey=6435455bdb710c7d0970&amp;q=EUR_GBP&amp;compact=y</value>
     </data>
     <data name="ServerDownError" xml:space="preserve">
         <value>Failed to fetch data. Server is down.</value>

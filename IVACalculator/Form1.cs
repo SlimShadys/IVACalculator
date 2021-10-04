@@ -12,20 +12,20 @@ namespace IVACalculator
 {
     public partial class Form1 : Form
     {
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
         private double currency;
         private double prezzoArticolo;
         private double prezzoFinale;
+        private readonly CultureInfo currentCulture = CultureInfo.CurrentCulture;
         private readonly WebClient wc = new WebClient();
         private static string AUD = "";
         private static string CAD = "";
         private static string GBP = "";
         private static string USD = "";
-        private static string EUR = "1.00";
-        private static string tokenKey = "OWI0ODJlZTVjNGZiNGE1MWY5N2QzOTVkMjk5MzkzZjE=";
+        private const string EUR = "1.00";
+        private const string tokenKey = "OWI0ODJlZTVjNGZiNGE1MWY5N2QzOTVkMjk5MzkzZjE=";
         private string caption = Properties.Resources.ResourceManager.GetString("msgCaption", CultureInfo.CurrentCulture);
         private string title = Properties.Resources.ResourceManager.GetString("insertValue", CultureInfo.CurrentCulture);
-        private static String[] currencyList =
+        private readonly static string[] currencyList =
         {
             "AUD",
             "CAD",
@@ -41,9 +41,9 @@ namespace IVACalculator
         {
             InitializeComponent();
             getCurrency();
-            for (int i = 0; i < currencyList.Length; i++)
+            foreach (var t in currencyList)
             {
-                currencyComboBox.Items.Add(currencyList[i]);
+                currencyComboBox.Items.Add(t);
             }
             Aggiorna();
         }
@@ -105,7 +105,7 @@ namespace IVACalculator
             if (prezzo.Contains("."))
                 prezzo = prezzo.Replace(".", ",");
 
-            return double.Parse(prezzo) / Math.Round(currency, 2, MidpointRounding.AwayFromZero);
+            return Math.Round(double.Parse(prezzo) / currency, 2, MidpointRounding.AwayFromZero);
         }
 
         /*
@@ -117,18 +117,16 @@ namespace IVACalculator
             var data = Convert.FromBase64String(tokenKey);
             dynamic jsonDe = JsonConvert.DeserializeObject(wc.DownloadString(
                 "http://data.fixer.io/api/latest?access_key="+ Encoding.UTF8.GetString(data) + "&symbols=USD,AUD,CAD,GBP&format=1"));
-            try
-            {
+            
+            if (jsonDe != null)
                 success = jsonDe.success;
-            }
-            catch (NullReferenceException) {
-            }
             
             if (!success)
             {
                 speseFinaliText.Text = Properties.Resources.ResourceManager.GetString("ServerDownError", currentCulture);
                 return;
             }
+            
             USD = jsonDe.rates.USD;
             AUD = jsonDe.rates.AUD;
             CAD = jsonDe.rates.CAD;

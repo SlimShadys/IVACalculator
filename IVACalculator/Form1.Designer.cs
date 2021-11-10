@@ -47,7 +47,7 @@ namespace IVACalculator
             // 
             // prezzoTextBox
             // 
-            this.prezzoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.prezzoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.prezzoTextBox.Location = new System.Drawing.Point(89, 18);
             this.prezzoTextBox.Name = "prezzoTextBox";
             this.prezzoTextBox.Size = new System.Drawing.Size(165, 20);
@@ -57,7 +57,7 @@ namespace IVACalculator
             // 
             // articoloText
             // 
-            this.articoloText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.articoloText.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.articoloText.AutoSize = true;
             this.articoloText.Location = new System.Drawing.Point(3, 21);
             this.articoloText.Name = "articoloText";
@@ -70,7 +70,7 @@ namespace IVACalculator
             // 
             this.speseText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.speseText.AutoSize = true;
-            this.speseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.speseText.Location = new System.Drawing.Point(0, 8);
             this.speseText.Name = "speseText";
             this.speseText.Size = new System.Drawing.Size(83, 13);
@@ -79,9 +79,9 @@ namespace IVACalculator
             // 
             // speseFinaliText
             // 
-            this.speseFinaliText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.speseFinaliText.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.speseFinaliText.AutoSize = true;
-            this.speseFinaliText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speseFinaliText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.speseFinaliText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.speseFinaliText.Location = new System.Drawing.Point(85, 8);
             this.speseFinaliText.Name = "speseFinaliText";
@@ -92,8 +92,8 @@ namespace IVACalculator
             // 
             // calcolaButton
             // 
-            this.calcolaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.calcolaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calcolaButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.calcolaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.calcolaButton.Location = new System.Drawing.Point(291, 140);
             this.calcolaButton.Name = "calcolaButton";
             this.calcolaButton.Size = new System.Drawing.Size(98, 23);
@@ -105,12 +105,12 @@ namespace IVACalculator
             // versionText
             // 
             this.versionText.AutoSize = true;
-            this.versionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.versionText.Location = new System.Drawing.Point(11, 150);
             this.versionText.Name = "versionText";
-            this.versionText.Size = new System.Drawing.Size(88, 13);
+            this.versionText.Size = new System.Drawing.Size(97, 13);
             this.versionText.TabIndex = 5;
-            this.versionText.Text = "SlimShadys, v1.2";
+            this.versionText.Text = "SlimShadys, v1.2.1";
             this.versionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // currencyComboBox
@@ -177,7 +177,7 @@ namespace IVACalculator
             this.Controls.Add(this.calcolaButton);
             this.Controls.Add(this.versionText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "IVACalculator";
